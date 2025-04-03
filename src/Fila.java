@@ -11,35 +11,47 @@ public class Fila {
         }
     }
 
-    No topo = null; // Referência para o primeiro nó da lista
-
+    No inicio = null; // aponta pro inicio
+    No fim = null; // aponta pro final
     // Método para inserir um elemento no final da lista
     public void insereFila(int elemento) {
         No novoNo = new No(elemento); // Cria um novo nó com o elemento fornecido
-
-        if (topo == null) {
+        System.out.println("Inserindo elemento: "+ elemento);
+        if (fim == null) {
             // Caso a lista esteja vazia, o início aponta para o novo nó
-            topo = novoNo;
+            inicio = novoNo; // inicio e fim são iguais no primeiro insert correto?
+            fim = novoNo;
         } else {
             // Caso contrário, percorre a lista até o final
-            No atual = topo;
+            //No atual = topo;
+            fim.proximo = novoNo;
             //while (atual.proximo != null) {
             // JOptionPane.showMessageDialog(null, atual); // ??????????????
             //atual = atual.proximo; // Avança para o próximo nó
             //}
-            topo = novoNo;
-            novoNo.proximo = atual;// Insere o novo nó no final da lista
+            //topo = novoNo;
+            //novoNo.proximo = atual;// Insere o novo nó no final da lista
+            fim = novoNo;
         }
     }
     public void removerFila(){
-        topo = topo.proximo;
+        //topo = topo.proximo;
+        int removido = inicio.dado;
+        System.out.println("Removendo elemento: " +removido);
+        if (inicio == null){
+            System.out.println("Filha Vazia");
+        }
+        inicio = inicio.proximo; // isso não faz sentido na minha cabeça, pq so ta indo pra frente e não removendo
+        if (inicio == null){
+            fim = null; // quando zerar a fila tem que ferar o final pra n se perder
+        }
     }
-    // topo = topo.proximo  // LOGICA REMOÇÂO
+    // topo = topo.proximo  // LOGICA REMOÇÂO da pilhja
 
     // Método para exibir os elementos da lista (para teste)
     public void exibeFila() {
-        No atual = topo;
-        System.out.print("Lista: ");
+        No atual = inicio;
+        System.out.print("Fila Atual: ");
         while (atual != null) {
             System.out.print(atual.dado + " ");
             atual = atual.proximo; // Move para o próximo nó
@@ -49,6 +61,7 @@ public class Fila {
 
     public static void main(String[] args) {
         Fila fila = new Fila();
+        System.out.println("Roddando Fila");
 
         // Inserindo elementos na lista
         fila.insereFila(10);

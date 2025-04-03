@@ -22,6 +22,7 @@ public class Pilha {
             topo = novoNo;
         } else {
             // Caso contrário, percorre a lista até o final
+            System.out.println("Inserindo elemento: "+ elemento);
             No atual = topo;
             //while (atual.proximo != null) {
             // JOptionPane.showMessageDialog(null, atual); // ??????????????
@@ -32,6 +33,8 @@ public class Pilha {
         }
     }
     public void removerTopo(){
+        int removido = topo.dado;
+        System.out.println("Removendo elemento: " +removido);
         topo = topo.proximo;
     }
     // topo = topo.proximo  // LOGICA REMOÇÂO
@@ -39,7 +42,7 @@ public class Pilha {
     // Método para exibir os elementos da lista (para teste)
     public void exibeLista() {
         No atual = topo;
-        System.out.print("Lista: ");
+        System.out.print("Pilha Atual: ");
         while (atual != null) {
             System.out.print(atual.dado + " ");
             atual = atual.proximo; // Move para o próximo nó
@@ -49,6 +52,7 @@ public class Pilha {
 
     public static void main(String[] args) {
         Pilha lista = new Pilha();
+        System.out.println("RODANDO PILHA");
 
         // Inserindo elementos na lista
         lista.insereElemento(10);
