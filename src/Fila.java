@@ -41,7 +41,7 @@ public class Fila {
         if (inicio == null){
             System.out.println("Filha Vazia");
         }
-        inicio = inicio.proximo; // isso não faz sentido na minha cabeça, pq so ta indo pra frente e não removendo
+        inicio = inicio.proximo; // Agora o inicio é o proximo no depois do inicio
         if (inicio == null){
             fim = null; // quando zerar a fila tem que ferar o final pra n se perder
         }

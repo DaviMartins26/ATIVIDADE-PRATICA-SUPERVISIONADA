@@ -1,7 +1,4 @@
 public class Merge {
-    int[] A = {12, 35, 52, 64};
-    int[] B = {5, 15, 23, 55, 75};
-
     // Classe interna para representar um nó da lista
     class No {
         int dado; // Valor armazenado no nó
@@ -40,7 +37,7 @@ public class Merge {
         if (inicio == null){
             System.out.println("Filha Vazia");
         }
-        inicio = inicio.proximo; // isso não faz sentido na minha cabeça, pq so ta indo pra frente e não removendo
+        inicio = inicio.proximo; // agora faz sentido pq to apontando que o inicio agora é o proximo elemento depois de inicio
         if (inicio == null){
             fim = null; // quando zerar a fila tem que ferar o final pra n se perder
         }
