@@ -1,18 +1,35 @@
-O Sistema possue um main para facilitar a adicição e remoção sem precisar adicionar codigos na pilha e fila, no merge ele faz de forma automatica.
-Possue um menu principal aonde vc escolhe a operação(Fila, pilha e merge), e menus secundarios para cada pra poder adicionar, remover ou ver os elementos.
+txt escrito pela IDE por isso pode estar meio estranhoa  formatação.
+
+Os codigos de Pilha e Fila fornecidos nas aulas pelo professor foram utilizados como base para implementação dos demais codigos.
+Quando solicitado em Voltar nos Menus é possivel que a mensagem "opção invalida" seja mostrada, não sei pq isso está acontecendo mas não impacta em nada no funcionamento correto.
+O Sistema possue um main para facilitar a adicição e remoção sem precisar adicionar codigos na pilha e fila, os merges ele faz de forma automatica.
+Há 2 meges pq foi desenvolvida duas versões, a primeira(Merge) não parecisa atender corretamente os requisitos dados na atividade, ao falar "implemente uma função que recebe duas filas A e B como entrada e gera uma terceira fila C"
+Por isso foi desenvolvida o Merge2, este "transforma" os array em NO e utiliza NO pra fazer a "Fila principal", mais informações nas soluções.
+
+O sistema possue um menu principal aonde vc escolhe a operação(Fila, pilha e merge e merge2), e menus secundarios para cada pra poder adicionar, remover ou ver os elementos.
+Voce tambem pode executar cada solução de forma separada pq cada uma tem seu proprio main que foi usado em testes.
 
 Soluções:
-    1- Pilha: adiciona Nos infinitos e fica de olho apenas no topo para saber qual no remover.
-              Ao remover ele apenas remove o topo, e o topo agora passa a ser o ultimo que foi adiciado antes de remover o topo atual.   
-              Para exibir a Pilha, primeiro eu olho o topo e vou descendo a pilha olhando pro proximo que ele aponta.  
-    2-Fila: este já trabalha com inicio e fim, antes de inserir qualquer elemento estes ponteiros são null.
-            ao adicionar umo primeiro elemento o inicio e fim apontam pro mesmo elemento.
-            Ao adicionar o segundo elemento, o inicio aponta pro primeiro elemento, e o fim aponta pro ultimo NO adicionado, assim infitiatmente.
-            Ao remover um elemento, o inicio passa a ser o proximo NO depois de inicio, que era o NO apontado pelo inicio.
+        1- Pilha: adiciona Nos infinitos e fica de olho apenas no topo para saber qual no remover.
+                Ao remover ele apenas remove o topo, e o topo agora passa a ser o ultimo que foi adiciado antes de remover o topo atual.   
+                 Para exibir a Pilha, primeiro eu olho o topo e vou descendo a pilha olhando pro proximo que ele aponta.  
+              
+        2-Fila: este já trabalha com inicio e fim, antes de inserir qualquer elemento estes ponteiros são null.
+                ao adicionar umo primeiro elemento o inicio e fim apontam pro mesmo elemento.
+                Ao adicionar o segundo elemento, o inicio aponta pro primeiro elemento, e o fim aponta pro ultimo NO adicionado, assim infitiatmente.
+                Ao remover um elemento, o inicio passa a ser o proximo NO depois de inicio, que era o NO apontado pelo inicio.
 
-    3-Merge: Este funcionada da seguinte mateira:
+        3-Merge: Este funcionada da seguinte mateira:
                 1- possuo os array A e B.
-                2- pego o indice 0 em A e passo pelos demais incides em A e B comparando se o indice 0 é o menor.
+                2- pego o indice 0 em A e passo pelos demais incides em A e B comparando se o indice pego atualmente é o menor.
                 3- Se for ele é adicionado a fila de NO, se não for ele não é adicionado e o programa vai pro proximo indice.
                 4- Percorro todos os indices do array até finalizar eles, assim ordenando em NO os menores valores primeiro.
-
+        
+        4-Merge2: 
+                1- Este pega os array A e B, transforma cada um em um NO separado, sendo eles NO_A e NO_B
+                2- AO pedir o Merger ele começa pegando o primeiro dado dos NOs, e compara se A é menor que B.
+                3- Se for menor mesmo o dado adicionado ao NO_C é este dado de NO_A, e proximo dado de NO_A passa a ser o proximo dado do NO_A que era apontado pelo primeiro dado.
+                4- Se o dado de NO_B for maior é a mesma logica de pegar o dado do NO, e apontar pro proximo dado do mesmo NO que é utilizada
+                5- Como NO_B tem mais dados, esta comparação so é feita até o proximo dado de NO_A apontar pra NULL.
+                6- Depois disso o ultimo dado de NO_B é adiciado em NO_C é adicionado.
+                7- Importante resaltar que o programa informa todo dado que é adicionado em um NO e em qual NO está sendo adicionado.

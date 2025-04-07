@@ -13,6 +13,7 @@ public class Merge {
 
     No inicio = null;
     No fim = null;
+    
     // Método para inserir um elemento no final da lista
 
     public void insereFila(int elemento) {
