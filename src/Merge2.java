@@ -16,9 +16,10 @@ public class Merge2 {
 
      // Método para inserir um elemento no final da lista
 
-    public void insereFila(int elemento) {
+    public void insereFila(int elemento, String NO_removido) {
         No novoNo = new No(elemento);
         System.out.println("Inserindo em NO_C o menor elemento: " + elemento);
+        System.out.println("Removendo elemento: "+elemento+" do "+NO_removido);
         if (fim == null){
             // Caso a lista esteja vazia, o início aponta para o novo nó
             inicio = novoNo; // inicio e fim são iguais no primeiro insert correto?
@@ -81,17 +82,18 @@ public No arrayParaNO(int[] array, int tamanho, String nome) {
     
     // faz o merge com o NO_A e NO_B fazendo um terceiro NO, sendo ele o C de forma ordenando os elementos apartir do menor
     public void fazerMerge(No NO_A, No NO_B) {
+        System.out.println("Comparando NO_A e NO_B....");
         while (NO_A != null) { // enquanto o ultimo dado do NO_A for != de null fica em while, daria pra colocar && b != tambem, mas pelo tamanho o A ele vai acabar antes
             if (NO_A.dado < NO_B.dado) { // se A for menor vai
-                insereFila(NO_A.dado); // vai insetir o dado no NO_A na Fila do NO_C
+                insereFila(NO_A.dado, "NO_A"); // vai insetir o dado no NO_A na Fila do NO_C
                 NO_A = NO_A.proximo; // e vai pro proximo dado de NO_A
             } else { // se b for maior
-                insereFila(NO_B.dado); // vai inserir no C 
+                insereFila(NO_B.dado,"NO_B"); // vai inserir no C
                 NO_B = NO_B.proximo;
             }
         }
         // como B tem um dado a mais, ele vai ficar de fora de NO_C se depender apenas do while 
-        insereFila(NO_B.dado);
+        insereFila(NO_B.dado,"NO_B");
         NO_B = NO_B.proximo;
 
     }
